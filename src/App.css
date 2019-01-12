@@ -1,0 +1,55 @@
+.tab-menu {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+.tab-menu button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  min-width: 100px;
+}
+
+.tab-menu button:hover {
+  background-color: #ddd;
+}
+
+.tab-menu button.active {
+  background-color: #ccc;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  margin-top: -1px;
+  list-style-type: none; 
+}
+
+img, span, label {
+  padding-top: 10px;
+}
+
+img {
+  max-height: 200px;
+  max-width: 200px;
+  display: block;
+}
+
+label {
+  font-weight: bold;
+  font-family: Calibri;
+}
+
+span {
+  display: block;
+  font-family: Calibri;
+}
