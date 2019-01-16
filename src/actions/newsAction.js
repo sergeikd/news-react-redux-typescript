@@ -15,6 +15,7 @@ export const newsFetchSuccess = (news) => {
 }
 
 export const getNews = (searchWord) => {
+    console.log("searchWord", searchWord);
     const url = `${baseUrl}everything?q=${searchWord}&apiKey=${apiKey}`;
     return (dispatch) => {
         dispatch(newsAreLoading(true));
