@@ -1,14 +1,8 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
-import { getNews } from "../actions/newsAction";
 
-class Content extends Component {
-    componentDidMount() {
-        this.props.fetchData("Trump");
-    }
+export class Content extends Component {
 
     render() {
-        // console.log("props", this.props);
         if (this.props.isLoading) {
             return <p>Loading…</p>;
         }
@@ -29,20 +23,3 @@ class Content extends Component {
         );
     }
 }
-
-const mapStateToProps = (state) => {
-    console.log("state", state);
-
-    return {
-        articles: state.news.articles,
-        isLoading: state.news.isLoading,
-    };
-};
-
-const mapDispatchToProps = (dispatch) => {
-    return {
-        fetchData: (searchWord) => dispatch(getNews(searchWord))
-    };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Content);
