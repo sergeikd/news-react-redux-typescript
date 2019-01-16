@@ -8,7 +8,6 @@ class Content extends Component {
     }
 
     render() {
-        // console.log("props", this.props);
         if (this.props.isLoading) {
             return <p>Loading…</p>;
         }
@@ -31,11 +30,9 @@ class Content extends Component {
 }
 
 const mapStateToProps = (state) => {
-    console.log("state", state);
-    // const {news, isLoading} = state;
-    // return {news, isLoading};
+
     return {
-        articles: state.news.news,
+        articles: state.news.articles,
         isLoading: state.news.isLoading,
     };
 };
