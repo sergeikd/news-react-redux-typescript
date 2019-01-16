@@ -8,14 +8,14 @@ class Content extends Component {
     }
 
     render() {
-        console.log("props", this.props);
+        // console.log("props", this.props);
         if (this.props.isLoading) {
             return <p>Loading…</p>;
         }
 
         return (            
             <ul className="news-list">
-                {this.props.news.map((newsItem, index) => {
+                {this.props.articles.map((newsItem, index) => {
                     return (
                         <li key={index} className="news-item">
                             <img src={newsItem.urlToImage} alt={newsItem.title}></img>
@@ -35,8 +35,8 @@ const mapStateToProps = (state) => {
     // const {news, isLoading} = state;
     // return {news, isLoading};
     return {
-        news: state.news,
-        isLoading: state.isLoading,
+        articles: state.news.news,
+        isLoading: state.news.isLoading,
     };
 };
 
