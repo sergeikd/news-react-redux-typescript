@@ -2,6 +2,7 @@
   "name": "news-app-react",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://sergeikd.github.io/news-react-redux-typescript/",
   "dependencies": {
     "@types/jest": "^23.3.10",
     "@types/node": "^10.12.15",
@@ -18,6 +19,8 @@
     "typescript": "^3.2.2"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

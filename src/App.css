@@ -58,12 +58,13 @@ span {
   float: left;
   min-height: 14px;
   min-width: 1px;
-  padding: 14px 16px;
+  padding: 14px 10px;
+  margin-left: 10px;
   border-left: 1px solid black;
   font: 400 13.3333px Arial;
 }
 
-select {
+select, input {
   float: left;
   cursor: pointer;
   padding: 6px 10px;

@@ -7,12 +7,13 @@ import App from "./App";
 import "./index.css";
 import * as serviceWorker from "./serviceWorker";
 import { news } from "./reducers/newsReducer";
-import { selection } from "./reducers/selectReduser";
+import { selection } from "./reducers/selectReducer";
+import { search } from "./reducers/searchReducer";
 
 const reducers = combineReducers({
     news,
     selection,
-    // isLoading
+    search,
 });
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(reducers, composeEnhancers(

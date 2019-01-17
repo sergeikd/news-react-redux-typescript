@@ -2,6 +2,7 @@ import React from "react";
 
 import { Tab } from "./Tab";
 import Select from "./Select";
+import Search from "./Search";
 
 interface ITabMenu {
     themes: string[];
@@ -17,6 +18,7 @@ export const TabMenu: React.FC<ITabMenu> = ({ themes, activeTab, onTabClick }): 
                     <Tab tabItem={tabItem} activeTab={activeTab} index={index} onTabClick={onTabClick} key={index} />
                 );
             })}
+            <Search />
             <Select />
         </div>
     );

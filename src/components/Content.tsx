@@ -11,13 +11,14 @@ export interface IArticle {
     };
 }
 
-interface IArticles {
+interface IContent {
     isLoading: boolean;
     articles: IArticle[];
     selected: string;
+    search: string;
 }
 
-class Content extends React.Component<IArticles> {
+class Content extends React.Component<IContent> {
     render(): React.ReactNode {
         if (this.props.isLoading) {
             return (<p>Loading...</p>);
@@ -27,6 +28,11 @@ class Content extends React.Component<IArticles> {
         if (this.props.selected) {
             articles = articles.filter(x => x.source.name === this.props.selected);
         }
+
+        if (this.props.search) {
+            articles = articles.filter(x => x.title.toLowerCase().includes(this.props.search.toLowerCase()));
+        }
+
         return (
             <ul className="news-list">
                 {articles.map((newsItem, index) => {
@@ -52,19 +58,24 @@ export interface IState {
     selection: {
         selected: string;
     };
+    search: {
+        input: string;
+    };
 }
 
 type MapStateToProps = (state: IState) => {
     selected: string,
+    search: string,
     articles: IArticle[],
     isLoading: boolean,
 };
 
 const mapStateToProps: MapStateToProps = (state) => {
     return {
-        selected: state.selection.selected,
         articles: state.news.articles,
         isLoading: state.news.isLoading,
+        selected: state.selection.selected,
+        search: state.search.input,
     };
 };
 
