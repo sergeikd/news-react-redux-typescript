@@ -7,9 +7,11 @@ import App from "./App";
 import "./index.css";
 import * as serviceWorker from "./serviceWorker";
 import { news } from "./reducers/newsReducer";
+import { selection } from "./reducers/selectReduser";
 
 const reducers = combineReducers({
     news,
+    selection,
     // isLoading
 });
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

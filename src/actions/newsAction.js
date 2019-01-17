@@ -5,17 +5,16 @@ export const newsAreLoading = (isLoading) => {
         type: "NEWS_ARE_LOADING",
         isLoading,
     };
-}
+};
 
 export const newsFetchSuccess = (news) => {
     return {
         type: "NEWS_FETCH_SUCCESS",
         news,
     };
-}
+};
 
 export const getNews = (searchWord) => {
-    console.log("searchWord", searchWord);
     const url = `${baseUrl}everything?q=${searchWord}&apiKey=${apiKey}`;
     return (dispatch) => {
         dispatch(newsAreLoading(true));

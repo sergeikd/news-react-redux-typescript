@@ -1,7 +1,6 @@
 const initialState = {
     articles: [],
-    isLoading: false,
-    //searchWord: "Trump",
+    isLoading: true,
 };
 
 export const news = (state = initialState, action) => {

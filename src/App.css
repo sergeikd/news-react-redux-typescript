@@ -53,3 +53,19 @@ span {
   display: block;
   font-family: Calibri;
 }
+
+.delimeter {
+  float: left;
+  min-height: 14px;
+  min-width: 1px;
+  padding: 14px 16px;
+  border-left: 1px solid black;
+  font: 400 13.3333px Arial;
+}
+
+select {
+  float: left;
+  cursor: pointer;
+  padding: 6px 10px;
+  margin-top: 6px;
+}
