@@ -16,6 +16,7 @@ interface IContent {
     articles: IArticle[];
     selected: string;
     search: string;
+    asc: boolean;
 }
 
 class Content extends React.Component<IContent> {
@@ -33,6 +34,12 @@ class Content extends React.Component<IContent> {
             articles = articles.filter(x => x.title.toLowerCase().includes(this.props.search.toLowerCase()));
         }
 
+        /* tslint:disable-next-line */
+        articles = articles.sort((a, b) => ('' + a.title).localeCompare(b.title));
+
+        if(!this.props.asc) {
+            articles = articles.reverse();
+        }
         return (
             <ul className="news-list">
                 {articles.map((newsItem, index) => {
@@ -40,8 +47,8 @@ class Content extends React.Component<IContent> {
                         <li key={index} className="news-item">
                             <img src={newsItem.urlToImage} alt={newsItem.title}></img>
                             <label>{newsItem.title}</label>
-                            <span>{newsItem.description}</span>
-                            <span><i>{newsItem.source.name}</i></span>
+                            <p>{newsItem.description}</p>
+                            <p><i>{newsItem.source.name}</i></p>
                         </li>
                     );
                 })}
@@ -61,6 +68,9 @@ export interface IState {
     search: {
         input: string;
     };
+    sort: {
+        asc: boolean;
+    };
 }
 
 type MapStateToProps = (state: IState) => {
@@ -68,6 +78,7 @@ type MapStateToProps = (state: IState) => {
     search: string,
     articles: IArticle[],
     isLoading: boolean,
+    asc: boolean,
 };
 
 const mapStateToProps: MapStateToProps = (state) => {
@@ -76,6 +87,7 @@ const mapStateToProps: MapStateToProps = (state) => {
         isLoading: state.news.isLoading,
         selected: state.selection.selected,
         search: state.search.input,
+        asc: state.sort.asc,
     };
 };
 

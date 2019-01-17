@@ -3,6 +3,7 @@ import React from "react";
 import { Tab } from "./Tab";
 import Select from "./Select";
 import Search from "./Search";
+import Sort from "./Sort";
 
 interface ITabMenu {
     themes: string[];
@@ -20,6 +21,7 @@ export const TabMenu: React.FC<ITabMenu> = ({ themes, activeTab, onTabClick }): 
             })}
             <Search />
             <Select />
+            <Sort />
         </div>
     );
 };
