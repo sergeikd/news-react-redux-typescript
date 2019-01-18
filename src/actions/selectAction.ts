@@ -1,7 +1,6 @@
-type SetSelection = (input: string) => {
-    type: string;
-    select: string;
-};
+import { SelectAction } from "../reducers/selectReducer";
+
+type SetSelection = (input: string) => SelectAction;
 
 export const setSelection: SetSelection = (select) => {
     return {

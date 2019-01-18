@@ -15,7 +15,10 @@ interface ISort {
 }
 
 class Sort extends React.Component<ISort> {
-    asc: boolean = true;
+    componentDidMount(): void {
+        const initialSorting: boolean = true;
+        this.props.changeSort(initialSorting);
+    }
 
     handleClick = (event: React.MouseEvent<HTMLSpanElement>) => {
         this.props.changeSort(event.currentTarget.textContent === "Z-A");

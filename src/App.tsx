@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Dispatch, AnyAction } from "redux";
+import { Dispatch } from "redux";
 import "./App.css";
 import Content from "./components/Content";
 import { themes } from "./config/appConfig";
@@ -45,7 +45,7 @@ class App extends Component<IAppProps, IAppState> {
   }
 }
 
-type MapDispatchToProps =  (dispatch: (dispatch: (dispatch: Dispatch<AnyAction>) => void) => void) => {
+type MapDispatchToProps =  (dispatch: (dispatch: (dispatch: Dispatch) => void) => void) => {
   fetchData: (searchWord: string) => void;
 };
 

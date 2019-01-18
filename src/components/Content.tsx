@@ -34,8 +34,7 @@ class Content extends React.Component<IContent> {
             articles = articles.filter(x => x.title.toLowerCase().includes(this.props.search.toLowerCase()));
         }
 
-        /* tslint:disable-next-line */
-        articles = articles.sort((a, b) => ('' + a.title).localeCompare(b.title));
+        articles = articles.sort((a, b) => (""+ a.title).localeCompare(b.title));
 
         if(!this.props.asc) {
             articles = articles.reverse();

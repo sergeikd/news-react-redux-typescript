@@ -1,7 +1,6 @@
-type SetSortDirection = (asc: boolean) => {
-    type: string;
-    asc: boolean;
-};
+import { SortAction } from "../reducers/sortReducer";
+
+type SetSortDirection = (asc: boolean) => SortAction;
 
 export const setSortDirection: SetSortDirection = (asc) => {
     return {

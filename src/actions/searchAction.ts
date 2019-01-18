@@ -1,7 +1,6 @@
-type SetSearch = (input: string) => {
-    type: string;
-    input: string;
-};
+import { SearchAction } from "../reducers/searchReducer";
+
+type SetSearch = (input: string) => SearchAction;
 
 export const setSearch: SetSearch = (input) => {
     return {
